@@ -19,9 +19,6 @@ export default function Header() {
   const navLinks = [
     { to: '/', label: t('nav.home') },
     { to: '/shop', label: t('nav.shop') },
-    { to: '/shop?gender=men', label: t('nav.men') },
-    { to: '/shop?gender=women', label: t('nav.women') },
-    { to: '/shop?gender=unisex', label: t('nav.unisex') },
     { to: '/brands', label: t('nav.brands') },
     { to: '/about', label: t('nav.about') },
   ];
