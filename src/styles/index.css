@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/500.css';
+@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource/cormorant-garamond/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@theme {
+  --color-obsidian: #171615;
+  --color-ivory: #F7F3EC;
+  --color-gold: #C6A46A;
+  --color-espresso: #342820;
+  --color-taupe: #A79A89;
+  --color-cream: #FAF8F5;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ivory);
+    background-color: var(--color-obsidian);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #1a1918; }
+  ::-webkit-scrollbar-thumb { background: var(--color-taupe); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-obsidian px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:bg-gold/80 hover:text-obsidian;
+  }
+  .btn-secondary {
+    @apply border border-gold text-gold px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:bg-gold hover:text-obsidian;
+  }
+  .btn-gold {
+    @apply bg-gold text-obsidian px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:bg-gold/80 hover:text-obsidian;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16;
+  }
+  .container-luxury {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
